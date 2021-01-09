@@ -22,7 +22,7 @@ namespace MemoryStreamExample
         const int GenderLength = 4;
 
         const int IsManagerOffset = 120;
-        const int IsManagerLength = 16;
+        const int IsManagerLength = 10;
 
         const int RecordLength = IdLength + FirstNameLength + LastNameLength + SalaryLength + GenderLength + IsManagerLength;
 
@@ -135,7 +135,7 @@ namespace MemoryStreamExample
         private static void UpdateIsManager(UnicodeEncoding unicodeEncoding, MemoryStream ms, bool isManager)
         {
 
-            string newValue = isManager.ToString().PadRight(SalaryLength / 2);
+            string newValue = isManager.ToString().PadRight(IsManagerLength / 2);
 
             Updatefield(unicodeEncoding, ms, IsManagerOffset, IsManagerLength, newValue);
         
